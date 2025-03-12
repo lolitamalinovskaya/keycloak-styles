@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Partner Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="icons/keycloak.svg" type="image/svg+xml">
+    <link rel="stylesheet/less" type="text/css" href="login.less"/>
+</head>
+<body>
+<div id="root">
+    <div class="login-pf-page">
+        <header id="kc-header" class="login-pf-page-header">
+            <img src="icons/keycloak.svg" alt="logo" class="login-pf-page-header-logo"/>
+            <button id="phone-btn">
+                <img src="icons/phone.svg" alt="phone"/>
+                <p>+41 657 781 250</p>
+            </button>
+        </header>
+        <div class="card-pf">
+            <div class="login-pf-header">
+                <h1 id="kc-page-title"><span class="kc-page-title-name">Welcome to Keycloak Styles</span></h1>
+            </div>
+        </div>
+        <main id="kc-content">
+            <div id="kc-content-wrapper">
+                <div id="kc-form">
+                    <div id="kc-form-wrapper">
+                        <form id="kc-form-login">
+                            <div>
+                                <label for="email" class="control-label">Email</label>
+                                <input id="email" class="form-control" type="email" required placeholder=""/>
+                            </div>
+                            <div>
+                                <label for="password" class="control-label">Password</label>
+                                <input id="password" class="form-control" type="password" placeholder=""/>
+                            </div>
+                            <div></div>
+                            <div id="kc-form-buttons">
+                                <button id="kc-login" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/less"></script>
+
+<script type="text/javascript">
+    // for register inputs style
+    const setPlaceholderToInputs = (string) => {
+        const idArray = string.split(',');
+        idArray.forEach((id) => {
+            document.getElementById(id.trim())?.setAttribute("placeholder", "");
+        })
+    }
+
+    setTimeout(() => {
+        setPlaceholderToInputs('username, password, email, firstName, lastName, password-confirm'); // email-address,first-name,last-name
+    }, 50)
+</script>
+</body>
+</html>
